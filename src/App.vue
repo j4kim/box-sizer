@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Box sizer</h1>
+
     <div>
       <label for="x">x: </label>
       <input type="number" name="x" v-model="x">
@@ -16,6 +17,16 @@
     <div>
       <label for="e">e: </label>
       <input type="number" name="e" v-model="e">
+    </div>
+
+    <div style="margin-top:20px">
+      <div :style="{
+        width: `${x}mm`,
+        height: `${y}mm`,
+        border: '1px solid black'
+      }">
+        {{ x }} x {{ y }} mm
+      </div>
     </div>
   </div>
 </template>
