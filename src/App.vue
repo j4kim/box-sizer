@@ -23,26 +23,34 @@
       <input type="number" name="b" v-model="b">
     </div>
 
-    <div style="margin-top:20px">
-      <div :style="{
-        width: `${x}px`,
-        height: `${y}px`,
-        border: `${b}px solid black`
-      }">
-        {{ x }} x {{ y }} mm
-      </div>
-    </div>
+    <main :style="{
+      padding: '20px',
+      backgroundColor: 'lightgray'
+    }">
+      <side
+        v-for="side in config.sides"
+        :key="side.name"
+        v-bind="$data"
+        :side="side"
+      />
+    </main>
   </div>
 </template>
 
 <script>
+import config from './config'
+import Side from './Side'
+
 export default {
+  components: { Side },
+
   data: () => ({
     x: 200,
     y: 100,
-    z: 0,
-    e: 0,
-    b: 1
+    z: 50,
+    e: 1,
+    b: 1,
+    config
   })
 }
 </script>
@@ -51,6 +59,7 @@ export default {
 * {
   box-sizing: border-box;
 }
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
