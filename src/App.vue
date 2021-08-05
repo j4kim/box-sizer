@@ -18,12 +18,16 @@
       <label for="e">e: </label>
       <input type="number" name="e" v-model="e">
     </div>
+    <div>
+      <label for="b">b: </label>
+      <input type="number" name="b" v-model="b">
+    </div>
 
     <div style="margin-top:20px">
       <div :style="{
-        width: `${x}mm`,
-        height: `${y}mm`,
-        border: '1px solid black'
+        width: `${x}px`,
+        height: `${y}px`,
+        border: `${b}px solid black`
       }">
         {{ x }} x {{ y }} mm
       </div>
@@ -34,15 +38,19 @@
 <script>
 export default {
   data: () => ({
-    x: 0,
-    y: 0,
+    x: 200,
+    y: 100,
     z: 0,
-    e: 0
+    e: 0,
+    b: 1
   })
 }
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
