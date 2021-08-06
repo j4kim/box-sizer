@@ -3,7 +3,7 @@
     :style="{
       width: `${width}px`,
       height: `${height}px`,
-      border: `1px solid black`,
+      border: `1px solid #555`,
       flexShrink: 0
     }"
   />
