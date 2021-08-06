@@ -4,19 +4,19 @@
 
     <div>
       <label for="x">x: </label>
-      <input type="number" name="x" v-model="variables.x">
+      <input type="number" name="x" v-model="variables.x" min="0">
     </div>
     <div>
       <label for="y">y: </label>
-      <input type="number" name="y" v-model="variables.y">
+      <input type="number" name="y" v-model="variables.y" min="0">
     </div>
     <div>
       <label for="z">z: </label>
-      <input type="number" name="z" v-model="variables.z">
+      <input type="number" name="z" v-model="variables.z" min="0">
     </div>
     <div>
       <label for="e">e: </label>
-      <input type="number" name="e" v-model="variables.e">
+      <input type="number" name="e" v-model="variables.e" min="0">
     </div>
 
     <main :style="{
