@@ -18,10 +18,6 @@
       <label for="e">e: </label>
       <input type="number" name="e" v-model="variables.e">
     </div>
-    <div>
-      <label for="b">b: </label>
-      <input type="number" name="b" v-model="variables.b">
-    </div>
 
     <main :style="{
       padding: '20px',
