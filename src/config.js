@@ -8,7 +8,7 @@ export default {
           h: ({z,e}) => +z - 4 * e
         },
         {
-          w: ({y,e}) => +y + 8 * e,
+          w: ({x,e}) => +x + 8 * e,
           h: ({z}) => z
         },
         {
