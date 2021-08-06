@@ -4,7 +4,7 @@ export default {
       name: 'A',
       rectangles: [
         {
-          w: ({y}) => y,
+          w: ({y}) => +y / 3,
           h: ({z}) => z
         },
         {
@@ -12,7 +12,7 @@ export default {
           h: ({z}) => z
         },
         {
-          w: ({y}) => y,
+          w: ({y}) => +y / 3,
           h: ({z}) => z
         }
       ]
@@ -41,7 +41,7 @@ export default {
       name: 'C',
       rectangles: [
         {
-          w: ({y,e}) => (+y + 2*e) / 2,
+          w: ({y}) => +y / 3,
           h: ({z}) => z
         },
         {
@@ -49,7 +49,7 @@ export default {
           h: ({z,e}) => +z + 2*e
         },
         {
-          w: ({y,e}) => (+y + 2*e) / 2,
+          w: ({y}) => +y / 3,
           h: ({z}) => z
         }
       ]
