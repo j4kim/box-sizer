@@ -1,13 +1,15 @@
 <template>
   <div
+    class="rectangle"
     :style="{
       width: `${width}px`,
-      height: `${height}px`,
-      backgroundColor: 'white',
-      border: `1px solid #666`,
-      flexShrink: 0
+      height: `${height}px`
     }"
-  />
+  >
+    <div class="caption">
+      {{ width.toFixed(1) }}
+    </div>
+  </div>
 </template>
 
 <script>
@@ -28,3 +30,19 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+div.rectangle{
+  background-color: white;
+  border: 1px solid #666;
+  flex-shrink: 0;
+  position: relative;
+  div.caption{
+    width: 100%;
+    font-size: 9px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+  }
+}
+</style>
