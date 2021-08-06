@@ -21,7 +21,8 @@
 
     <main :style="{
       padding: '20px',
-      backgroundColor: 'lightgray'
+      backgroundColor: 'lightgray',
+      minWidth: `${widthMax + 40}px`
     }">
       <side
         v-for="side in config.sides"
@@ -36,6 +37,7 @@
 import config from './config'
 import variables from './variables'
 import Side from './Side'
+import { sumBy, max } from 'lodash'
 
 export default {
   components: { Side },
@@ -43,7 +45,16 @@ export default {
   data: () => ({
     config,
     variables
-  })
+  }),
+
+  computed: {
+    widthMax() {
+      let sideWidths = config.sides.map(s =>
+        sumBy(s.rectangles, r => r.w(variables))
+      )
+      return max(sideWidths)
+    }
+  }
 }
 </script>
 
