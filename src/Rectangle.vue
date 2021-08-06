@@ -3,7 +3,8 @@
     :style="{
       width: `${width}px`,
       height: `${height}px`,
-      border: `1px solid #555`,
+      backgroundColor: 'white',
+      border: `1px solid #666`,
       flexShrink: 0
     }"
   />
