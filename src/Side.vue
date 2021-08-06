@@ -3,7 +3,6 @@
     <rectangle
       v-for="(rect, i) in side.rectangles"
       :key="i"
-      v-bind="$props"
       :rect="rect"
     />
   </div>
@@ -16,11 +15,6 @@ export default {
   components: { Rectangle },
 
   props: {
-    x: [Number, String],
-    y: [Number, String],
-    z: [Number, String],
-    e: [Number, String],
-    b: [Number, String],
     side: Object
   },
 

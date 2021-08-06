@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import variables from './variables'
+
 export default {
   props: {
     rect: Object
@@ -17,10 +19,10 @@ export default {
 
   computed: {
     width() {
-      return this.rect.w(this.$attrs)
+      return this.rect.w(variables)
     },
     height() {
-      return this.rect.h(this.$attrs)
+      return this.rect.h(variables)
     }
   }
 }

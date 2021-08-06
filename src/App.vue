@@ -4,23 +4,23 @@
 
     <div>
       <label for="x">x: </label>
-      <input type="number" name="x" v-model="x">
+      <input type="number" name="x" v-model="variables.x">
     </div>
     <div>
       <label for="y">y: </label>
-      <input type="number" name="y" v-model="y">
+      <input type="number" name="y" v-model="variables.y">
     </div>
     <div>
       <label for="z">z: </label>
-      <input type="number" name="z" v-model="z">
+      <input type="number" name="z" v-model="variables.z">
     </div>
     <div>
       <label for="e">e: </label>
-      <input type="number" name="e" v-model="e">
+      <input type="number" name="e" v-model="variables.e">
     </div>
     <div>
       <label for="b">b: </label>
-      <input type="number" name="b" v-model="b">
+      <input type="number" name="b" v-model="variables.b">
     </div>
 
     <main :style="{
@@ -30,7 +30,6 @@
       <side
         v-for="side in config.sides"
         :key="side.name"
-        v-bind="$data"
         :side="side"
       />
     </main>
@@ -39,18 +38,15 @@
 
 <script>
 import config from './config'
+import variables from './variables'
 import Side from './Side'
 
 export default {
   components: { Side },
 
   data: () => ({
-    x: 200,
-    y: 100,
-    z: 50,
-    e: 1,
-    b: 1,
-    config
+    config,
+    variables
   })
 }
 </script>
