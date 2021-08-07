@@ -7,16 +7,17 @@
       ...rect.style
     }"
   >
-    <div class="caption">
-      {{ width.toFixed(1) }}
-    </div>
+    <dim :value="width.toFixed(1)"/>
   </div>
 </template>
 
 <script>
 import variables from './variables'
+import Dim from './Dim'
 
 export default {
+  components: { Dim },
+
   props: {
     rect: Object
   },
@@ -38,12 +39,5 @@ div.rectangle{
   border: 1px solid #666;
   flex-shrink: 0;
   position: relative;
-  div.caption{
-    width: 100%;
-    font-size: 9px;
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-  }
 }
 </style>
