@@ -20,40 +20,21 @@
     </div>
 
     <main>
-      <div class="limit" :style="{ width: `${widthMax}px` }">
-        <span class="origin">0</span>
-        <side
-          v-for="side in config.sides"
-          :key="side.name"
-          :side="side"
-        />
-      </div>
+      <model/>
     </main>
   </div>
 </template>
 
 <script>
-import config from './config'
 import variables from './variables'
-import Side from './Side'
-import { sumBy, max } from 'lodash'
+import Model from './Model'
 
 export default {
-  components: { Side },
+  components: { Model },
 
   data: () => ({
-    config,
     variables
-  }),
-
-  computed: {
-    widthMax() {
-      let sideWidths = config.sides.map(s =>
-        sumBy(s.rectangles, r => r.w(variables))
-      )
-      return max(sideWidths)
-    }
-  }
+  })
 }
 </script>
 
@@ -78,17 +59,6 @@ export default {
     padding: 20px;
     background-color: #ddd;
     overflow: auto;
-    .limit {
-      background-color: #eee;
-      margin: 0 auto;
-      position: relative;
-      .origin {
-        font-size: 9px;
-        position: absolute;
-        top: -9px;
-        left: -5px;
-      }
-    }
   }
 }
 </style>
