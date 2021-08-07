@@ -19,17 +19,15 @@
       <input type="number" name="e" v-model="variables.e" min="0">
     </div>
 
-    <main :style="{
-      marginTop: '20px',
-      padding: '20px',
-      backgroundColor: 'lightgray',
-      minWidth: `${widthMax + 40}px`
-    }">
-      <side
-        v-for="side in config.sides"
-        :key="side.name"
-        :side="side"
-      />
+    <main>
+      <div class="limit" :style="{ width: `${widthMax}px` }">
+        <span class="origin">0</span>
+        <side
+          v-for="side in config.sides"
+          :key="side.name"
+          :side="side"
+        />
+      </div>
     </main>
   </div>
 </template>
@@ -73,6 +71,24 @@ export default {
 
   label {
     font-family: monospace;
+  }
+
+  main {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ddd;
+    overflow: auto;
+    .limit {
+      background-color: #eee;
+      margin: 0 auto;
+      position: relative;
+      .origin {
+        font-size: 9px;
+        position: absolute;
+        top: -9px;
+        left: -5px;
+      }
+    }
   }
 }
 </style>
