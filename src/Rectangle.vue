@@ -3,7 +3,8 @@
     class="rectangle"
     :style="{
       width: `${width}px`,
-      height: `${height}px`
+      height: `${height}px`,
+      ...rect.style
     }"
   >
     <div class="caption">
